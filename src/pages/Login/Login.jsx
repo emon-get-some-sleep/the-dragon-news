@@ -5,10 +5,12 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
+import useTitle from "../../hooks/useTitle";
 const Login = () => {
   const {signIn} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  useTitle('login');
   const from = location.state?.from?.pathname || '/category/0';
   console.log('login page location', location);
 
